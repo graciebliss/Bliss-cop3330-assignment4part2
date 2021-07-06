@@ -1,0 +1,118 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ListProgram {
+
+ +   main()
+ +   start()
+
+}
+
+class ListProgramController {
+ +   addListClick(ActionEvent actionEvent)
+
+ +  removeListClick(ActionEvent actionEvent)
+
+ +   addClick(ActionEvent actionEvent)
+
+ +   removeClick(ActionEvent actionEvent)
+
+ +   editListClick(ActionEvent actionEvent)
+
+ +   editClick(ActionEvent actionEvent)
+
+ +   markCompleteClick(ActionEvent actionEvent)
+
+ +   displayAll(ActionEvent actionEvent)
+
+ +   SaveOneClick(ActionEvent actionEvent)
+
+ +   saveAllClick(ActionEvent actionEvent)
+
+ +   loadOneClick(ActionEvent actionEvent)
+
+ +   displayComplete(ActionEvent actionEvent)
+
+ +   displayIncomplete(ActionEvent actionEvent)
+
+ +   loadMultipleClick(ActionEvent actionEvent)
+
+ +   sortByDateClick(ActionEvent actionEvent)
+
+
+}
+
+class Lists {
+
+    ArrayList<List> Lists
+
+  +  createLists()
+
+  + addAList(List list)
+  +  removeAList(List list)
+  +  editList(List list)
+  +  loadList(File file)
+  +  loadLists(File file)
+  +  saveList(File file, List list)
+  +  saveLists(File file, ArrayList<List>)
+
+
+
+}
+
+class List {
+
+    String listTitle
+    ArrayList<Tasks> Tasks
+    ArrayList<Tasks> CompletedTasks
+    ArrayList<Tasks> IncompleteTasks
+
+  +  createList(String title)
+
+  +  setTitle(String title)
+  +  getTitle()
+  +  getTasks()
+
+  +  addTask(Task task)
+  +  editTask(Task task)
+  +  removeTask(Task task)
+  +  markCompleted(Boolean completed)
+  +  displayCompletedTasks()
+  +  displayIncompleteTasks()
+  +  sortByDate(List list)
+
+  +  toString()
+
+
+}
+
+class Task {
+
+    String descript
+    String date
+    Boolean isCompleted
+
+  +  createTask(String descript, String date, Boolean isCompleted)
+
+  +  setDescription(String descript)
+  +  setDate(String date)
+  +  setIsCompleted(Boolean isCompleted)
+  +  getDescription()
+  +  getDate()
+  +  getIsCompleted()
+
+  +  toString()
+
+
+}
+
+
+
+javafx.Application <|-- ListProgram
+ListProgram -- ListProgramController
+ListProgramController *-> Lists
+Lists *--> List
+List *--> Task
+
+
+@enduml
