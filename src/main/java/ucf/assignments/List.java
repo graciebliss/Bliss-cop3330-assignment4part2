@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 public class List {
 
-    //Taken from diagram
+    //Taken from diagrams
     //create the attributes for a list to hols the title and the tasks and the separate completed tasks and incomplete tasks
-
+    //creates lists to display
     //String listTitle;
     //ArrayList<Task> Tasks;
     //ArrayList<Task> CompletedTasks;
