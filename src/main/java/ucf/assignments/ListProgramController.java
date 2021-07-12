@@ -94,9 +94,9 @@ public class ListProgramController {
                 taskListView.setItems(listTasks);
             }
 
+        removeTask.setDisable(false);
         markComplete.setDisable(false);
         editTask.setDisable(false);
-        removeTask.setDisable(false);
     }
 
 
@@ -133,8 +133,8 @@ public class ListProgramController {
                 lists.ProgramLists.remove(lists.ProgramLists.get(i));
             }
 
-        listLists.remove(listName);
         taskListView.getItems().clear();
+        listLists.remove(listName);
         updateTasks();
 
     }
@@ -245,8 +245,8 @@ public class ListProgramController {
         for(int i = 0; i < temp.Tasks.size(); i++)
             listTasks.add(temp.Tasks.get(i));
 
-        editTaskName.setText("");
         editTaskDatePicker.setValue(null);
+        editTaskName.setText("");
 
         updateTasks();
 
@@ -299,10 +299,6 @@ public class ListProgramController {
 
     }
 
-    public void saveAllClick(ActionEvent actionEvent) {
-        //when saveall is clicked all lists will be saved to a file
-        //saveLists will be called
-    }
 
     @FXML
     private void loadOneClick(Event e) {
@@ -353,11 +349,6 @@ public class ListProgramController {
             }
     }
 
-
-    public void loadMultipleClick(ActionEvent actionEvent) {
-        //when load multiple is clicked the selected files will be loaded to the lists list
-        //loadLists will be called
-    }
 
     public void sortByDateClick(ActionEvent actionEvent) {
         //sorts the arraylist of tasks by date

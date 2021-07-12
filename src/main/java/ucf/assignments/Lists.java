@@ -56,10 +56,6 @@ public class Lists {
     }
 
 
-    public static void loadLists(File file){
-       //loads multiple lists that were previously saved from a file taken as a parameter
-    }
-
 
     public String saveList(String list){
        //loop through all lists and find the correct name
@@ -84,7 +80,4 @@ public class Lists {
     }
 
 
-    public static void saveLists(File file, ArrayList<List> savelist){
-     //saves multiple lists that were taken in as a parameter to a file taken in as a parameter
-    }
 }
