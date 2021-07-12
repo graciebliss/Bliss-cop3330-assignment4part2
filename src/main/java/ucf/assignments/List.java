@@ -12,68 +12,100 @@ public class List {
     //Taken from diagrams
     //create the attributes for a list to hols the title and the tasks and the separate completed tasks and incomplete tasks
     //creates lists to display in the textareas
-    //String listTitle;
-    //ArrayList<Task> Tasks;
-    //ArrayList<Task> CompletedTasks;
-    //ArrayList<Task> IncompleteTasks;
+    String listTitle;
+    ArrayList<Task> Tasks;
 
-    public static void createList(String title){
+    public List(String title) {
+        this.listTitle = title;
+        Tasks = new ArrayList<Task>();
+    }
+
+    public void createList(String title){
         //initialize all three arraylists for the tasks, completed tasks, and incomplete tasks as empty arraylists
         //calls the setTitle function with the string that is taken in as a parameter
+        this.listTitle = title;
+        Tasks = new ArrayList<Task>();
     }
 
-    public static void setTitle(String title){
+    public void setTitle(String title){
         //sets the title of the list to a the string taken in as a parameter
+        this.listTitle=title;
     }
 
 
-    public static String getTitle(){
+    public String getTitle(){
         //returns the Title of the list
 
         //returns null for the purpose of getting rid of errors until code is written
-        return null;
+        return listTitle;
     }
 
 
-    public static ArrayList<Task> getTasks(){
+    public ArrayList<Task> getTasks(){
         //returns the arraylist of tasks
 
         //returns null for the purpose of getting rid of errors until code is written
-        return null;
+        return Tasks;
     }
 
-    public static void addTask(Task task){
+    public void addTask(Task task){
         //adds a task that is taken in as a parameter to the tasks arraylist
+        Tasks.add(task);
     }
-    public static void editTask(Task task){
+    public void editTask(String task, String title, String date){
         //edits the task that is taken in as a parameter in the tasks arraylist
+        //loops and looks for the task and then changes the attributes
+        for(int i = 0; i < Tasks.size(); i++)
+            if(Tasks.get(i).toString().equals(task)) {
+                Tasks.get(i).setDescription(listTitle);
+                Tasks.get(i).setDate(date);
+            }
     }
-    public static void removeTask(Task task){
+    public void removeTask(String task){
         //removes a task that is taken in as a parameter in the tasks arraylist
+        //loops through and finds the task then removes it
+        for(int i = 0; i < Tasks.size(); i++)
+            if(Tasks.get(i).toString().equals(task))
+                Tasks.remove(i);
     }
-    public static void markCompleted(Boolean isCompleted){
+    public void markCompleted(Boolean isCompleted, String task){
         //changes the boolean on a task to the boolean that is passed as a parameter
+        for(int i = 0; i < Tasks.size(); i++)
+            if(Tasks.get(i).toString().equals(task))
+                Tasks.get(i).setIsCompleted(true);
+
     }
-    public static void displayCompletedTasks(){
+    public ArrayList<Task> displayCompletedTasks(){
         //sets the completedtasks arraylist to the tasks that have a true isCompleted boolean
+        ArrayList<Task> completedTasks = new ArrayList<Task>();
+
+        for(int i = 0; i < Tasks.size(); i++)
+            if(Tasks.get(i).getIsCompleted() == true)
+                completedTasks.add(Tasks.get(i));
+
+        return completedTasks;
     }
-    public static void displayIncompleteTasks(){
+    public ArrayList<Task> displayIncompleteTasks(){
         //sets the incompletetasks arraylist to the tasks that have a false isCompleted boolean
+        //Create an ArrayList for the incomplete tasks
+        ArrayList<Task> incompleteTasks = new ArrayList<Task>();
 
+        for(int i = 0; i < Tasks.size(); i++)
+            if(Tasks.get(i).getIsCompleted() == false)
+                incompleteTasks.add(Tasks.get(i));
+
+        return incompleteTasks;
     }
 
-    public static void sortByDate(List list){
-        //takes the arraylist pf the current list passed as a parameter and loops through the dates finding the earliest and sorting from earliest to latest
+    public ArrayList<Task> displayAllTasks(){
+        return getTasks();
     }
 
     @Override
     public String toString(){
         //overrides the tostring method
 
-        //returns an empty string to get rid of errors
-        return "";
-
-
+        return getTitle();
     }
 
 

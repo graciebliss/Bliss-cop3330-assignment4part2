@@ -6,33 +6,52 @@ package ucf.assignments;
  *  Copyright 2021 Gracie Bliss
  */
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Lists {
     //taken from the diagram
     //Create an Arraylist of list objects to hold the to do lists
-    //ArrayList<List> Lists;
+    ArrayList<List> ProgramLists;
 
-   public static void createLists(){
+   public Lists(){
         //initializes the arraylist of list objects as an empty arraylist
+        ProgramLists = new ArrayList<List>();
     }
 
-    public static void addAList(List list){
+    public void addAList(List list){
         //adds a list that is taken in as a parameter to the arraylist of list objects
+     //adds the list
+        ProgramLists.add(list);
     }
 
 
-    public static void removeAList(List list){
+    public void removeAList(String list){
         //removes a list that is taken in as a parameter from the arraylist of list objects
+     //Loop through to find the list and then remove it if it is found
+       for(int i = 0; i < ProgramLists.size(); i++) {
+         if (ProgramLists.get(i).toString().equals(list)) {
+           ProgramLists.remove(i);
+         }
+      }
+
     }
 
 
-    public static void editList(List list){
+    public void editList(String list, String title){
        //edits the title of a list that is taken in as a parameter
+       //Loop through looking for a list and if it is found change the name
+       for(int i = 0; i < ProgramLists.size(); i++) {
+        if (ProgramLists.get(i).toString().equals(list)) {
+         ProgramLists.get(i).setTitle(title);
+        }
+       }
     }
 
-    public static void loadList(File file){
+    public static void loadList(String list){
        //loads a singular list that was previously saved from a file taken as a parameter
     }
 
@@ -42,8 +61,30 @@ public class Lists {
     }
 
 
-    public static void saveList(File file, List list){
-       //saves a singular list that was taken in as a parameter to a file taken in as a parameter
+    public String saveList(String list){
+        //Run through all the lists in the list of lists.
+        for(int i = 0; i < ProgramLists.size(); i++) {
+            //Find the list that has been passed by name.
+            if (ProgramLists.get(i).toString().equals(list)) {
+                try {
+                    //Create a writer and file.
+                    BufferedWriter bw = new BufferedWriter(new FileWriter(System.getProperty("user.home")+"\\Desktop\\" + ProgramLists.get(i).toString() + ".txt"));
+                    //Write the name of the list in the first line.
+                    bw.write(ProgramLists.get(i).toString() + "\n");
+                    //Write the tasks of that list in the other lines.
+                    for(int j = 0; j < ProgramLists.get(i).Tasks.size(); j++)
+                        bw.write(ProgramLists.get(i).Tasks.get(j).toString() + "\n");
+                    bw.close();
+                    return "Successful";
+                } catch (IOException e){
+
+                    return "Failure";
+                }
+
+            }
+        }
+
+        return "failure";
     }
 
 

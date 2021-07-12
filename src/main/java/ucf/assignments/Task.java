@@ -10,43 +10,54 @@ public class Task {
     //taken from the diagram
 
     //creates the attributed for each task
-   // String descript;
-   // String date;
-   // Boolean isCompleted;
+    String descript;
+    String date;
+    Boolean isCompleted;
 
-    public static void createTask(String descript, String date, Boolean isCompleted){
+    public Task(String text, String format, boolean b) {
+        this.descript = text;
+        this.date = format;
+        this.isCompleted = b;
+    }
+
+    public void createTask(String descript, String date, Boolean isCompleted){
         //initializes the task with the description passed as a parameter the date passed as a parameter anf the boolean passed as a parameter
         //calls setDescription setDate and setIsCompleted
+        this.descript = descript;
+        this.date = date;
+        this.isCompleted = isCompleted;
     }
 
-    public static void setDescription(String descript){
+    public void setDescription(String descript){
         //sets the description to the string passed as a parameter
+        this.descript=descript;
     }
 
-    public static void setDate(String date){
+    public void setDate(String date){
         //sets the date to the string passed as a parameter
+        this.date=date;
     }
 
-    public static void setIsCompleted(Boolean isCompleted){
+    public void setIsCompleted(Boolean isCompleted){
         //sets isCompleted to a boolean passed as a parameter
+        this.isCompleted=isCompleted;
     }
 
-    public static String getDescription(){
+    public String getDescription(){
         //returns the string that is the description
-
-        return "";
+        return this.descript;
     }
 
-    public static String getDate(){
+    public String getDate(){
         //returns the string that is the date
 
-        return "";
+        return this.date;
     }
 
-    public static Boolean getIsCompleted(){
+    public Boolean getIsCompleted(){
         //returns the boolean that is if the task is completed
 
-        return null;
+        return this.isCompleted;
     }
 
 
@@ -54,6 +65,13 @@ public class Task {
     public String toString(){
         //overrides the tostring method and returns a string
 
-        return "";
+        String completed;
+        if(getIsCompleted() == true)
+            completed = "Complete";
+        else
+            completed = "Incomplete";
+
+        return getDescription() + " " + getDate() + " " + completed;
     }
+
 }

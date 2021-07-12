@@ -9,29 +9,27 @@
 
 <AnchorPane prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ListProgramController">
    <children>
-      <TextField layoutX="388.0" layoutY="18.0" prefHeight="26.0" prefWidth="131.0" promptText="Add a task" />
-      <ListView layoutX="388.0" layoutY="53.0" prefHeight="262.0" prefWidth="196.0" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="388.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="53.0" />
+      <TextField fx:id="newListName" layoutX="388.0" layoutY="18.0" prefHeight="26.0" prefWidth="131.0" promptText="Add a task" />
+      <ListView fx:id="mainListView" layoutX="388.0" layoutY="53.0" onMouseClicked="#updateTasks" prefHeight="262.0" prefWidth="196.0" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="388.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="53.0" />
       <Button fx:id="addList" layoutX="529.0" layoutY="18.0" mnemonicParsing="false" onAction="#addListClick" prefHeight="26.0" prefWidth="54.0" text="Add" />
-      <ListView layoutX="22.0" layoutY="80.0" prefHeight="234.0" prefWidth="334.0" />
+      <ListView fx:id="taskListView" layoutX="22.0" layoutY="80.0" prefHeight="234.0" prefWidth="334.0" />
       <Text layoutX="22.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tasks in List" wrappingWidth="182.4000000000001" />
-      <Button fx:id="removeList" layoutX="388.0" layoutY="354.0" mnemonicParsing="false" onAction="#removeListClick" prefHeight="26.0" prefWidth="66.0" text="Remove" />
+      <Button fx:id="removeList" layoutX="388.0" layoutY="354.0" mnemonicParsing="false" onAction="#removeListClick" prefHeight="26.0" prefWidth="100.0" text="Remove" />
       <Button fx:id="addTask" layoutX="283.0" layoutY="44.0" mnemonicParsing="false" onAction="#addClick" text="Add to List" />
-      <TextField layoutX="22.0" layoutY="44.0" prefHeight="26.0" prefWidth="147.0" promptText="Description" />
-      <DatePicker layoutX="177.0" layoutY="43.0" prefHeight="26.0" prefWidth="100.0" />
+      <TextField fx:id="newTaskName" layoutX="22.0" layoutY="44.0" prefHeight="26.0" prefWidth="147.0" promptText="Description" />
+      <DatePicker fx:id="addDatePicker" layoutX="177.0" layoutY="43.0" prefHeight="26.0" prefWidth="100.0" />
       <Button fx:id="removeTask" layoutX="22.0" layoutY="354.0" mnemonicParsing="false" onAction="#removeClick" prefHeight="26.0" prefWidth="147.0" text="Remove" />
       <Button fx:id="editList" layoutX="388.0" layoutY="322.0" mnemonicParsing="false" onAction="#editListClick" prefHeight="26.0" prefWidth="41.0" text="Edit" />
       <Button fx:id="editTask" layoutX="22.0" layoutY="322.0" mnemonicParsing="false" onAction="#editClick" prefHeight="26.0" prefWidth="54.0" text="Edit" />
       <Button fx:id="markComplete" layoutX="177.0" layoutY="354.0" mnemonicParsing="false" onAction="#markCompleteClick" prefHeight="26.0" prefWidth="182.0" text="Mark As Complete" />
       <Button fx:id="allTasks" layoutX="259.0" layoutY="386.0" mnemonicParsing="false" onAction="#displayAll" prefHeight="26.0" prefWidth="100.0" text="Display All" />
-      <Button fx:id="saveOne" layoutX="387.0" layoutY="386.0" mnemonicParsing="false" onAction="#SaveOneClick" prefHeight="26.0" prefWidth="100.0" text="Save" />
-      <Button fx:id="saveAll" layoutX="499.0" layoutY="386.0" mnemonicParsing="false" onAction="#saveAllClick" prefHeight="26.0" prefWidth="86.0" text="Save All" />
-      <Button fx:id="loadOne" layoutX="459.0" layoutY="354.0" mnemonicParsing="false" onAction="#loadOneClick" prefHeight="26.0" prefWidth="54.0" text="Load" />
-      <TextField layoutX="86.0" layoutY="322.0" prefHeight="26.0" prefWidth="147.0" promptText="Description" />
-      <DatePicker layoutX="245.0" layoutY="322.0" prefHeight="26.0" prefWidth="114.0" />
-      <TextField layoutX="435.0" layoutY="322.0" prefHeight="26.0" prefWidth="147.0" promptText="New Title" />
+      <Button fx:id="saveOne" layoutX="387.0" layoutY="386.0" mnemonicParsing="false" onAction="#SaveOneClick" prefHeight="26.0" prefWidth="196.0" text="Save" />
+      <Button fx:id="loadOne" layoutX="499.0" layoutY="354.0" mnemonicParsing="false" onAction="#loadOneClick" prefHeight="26.0" prefWidth="86.0" text="Load" />
+      <TextField fx:id="editTaskName" layoutX="86.0" layoutY="322.0" prefHeight="26.0" prefWidth="147.0" promptText="Description" />
+      <DatePicker fx:id="editTaskDatePicker" layoutX="245.0" layoutY="322.0" prefHeight="26.0" prefWidth="114.0" />
+      <TextField fx:id="editListName" layoutX="435.0" layoutY="322.0" prefHeight="26.0" prefWidth="147.0" promptText="New Title" />
       <Button fx:id="completeTask" layoutX="22.0" layoutY="386.0" mnemonicParsing="false" onAction="#displayComplete" prefHeight="26.0" prefWidth="100.0" text="Completed" />
       <Button fx:id="incompleteTask" layoutX="132.0" layoutY="386.0" mnemonicParsing="false" onAction="#displayIncomplete" prefHeight="26.0" prefWidth="114.0" text="Incomplete" />
-      <Button fx:id="loadMultiple" layoutX="519.0" layoutY="354.0" mnemonicParsing="false" onAction="#loadMultipleClick" prefHeight="26.0" prefWidth="65.0" text="Load +" />
       <Button fx:id="sort" layoutX="278.0" layoutY="10.0" mnemonicParsing="false" onAction="#sortByDateClick" text="Sort by Date" />
    </children>
 </AnchorPane>
