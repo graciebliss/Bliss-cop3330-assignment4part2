@@ -1,10 +1,10 @@
 ucf/assignments/ListProgram.java
  ucf.assignments.ListProgram
-ucf/assignments/Lists.java
- ucf.assignments.Lists
-ucf/assignments/List.java
- ucf.assignments.List
 ucf/assignments/Task.java
  ucf.assignments.Task
 ucf/assignments/ListProgramController.java
  ucf.assignments.ListProgramController
+ucf/assignments/List.java
+ ucf.assignments.List
+ucf/assignments/Lists.java
+ ucf.assignments.Lists

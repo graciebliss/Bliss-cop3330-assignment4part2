@@ -9,35 +9,32 @@ class ListProgram {
 }
 
 class ListProgramController {
- +   addListClick(ActionEvent actionEvent)
+ +   addListClick(event e)
 
- +  removeListClick(ActionEvent actionEvent)
+ +  removeListClick(event e)
 
- +   addClick(ActionEvent actionEvent)
+ +   addClick(event e)
 
- +   removeClick(ActionEvent actionEvent)
+ +   removeClick(event e)
 
- +   editListClick(ActionEvent actionEvent)
+ +   editListClick(event e)
 
- +   editClick(ActionEvent actionEvent)
+ +   editClick(event e)
 
- +   markCompleteClick(ActionEvent actionEvent)
+ +   markCompleteClick(event e)
 
- +   displayAll(ActionEvent actionEvent)
+ +   displayAll(event e)
 
- +   SaveOneClick(ActionEvent actionEvent)
+ +   SaveOneClick(event e)
 
- +   saveAllClick(ActionEvent actionEvent)
 
- +   loadOneClick(ActionEvent actionEvent)
+ +   loadOneClick(event e)
 
- +   displayComplete(ActionEvent actionEvent)
+ +   displayComplete(event e)
 
- +   displayIncomplete(ActionEvent actionEvent)
+ +   displayIncomplete(event e)
 
- +   loadMultipleClick(ActionEvent actionEvent)
-
- +   sortByDateClick(ActionEvent actionEvent)
+ +   sortByDateClick(event e)
 
 
 }
@@ -51,10 +48,8 @@ class Lists {
   + addAList(List list)
   +  removeAList(List list)
   +  editList(List list)
-  +  loadList(File file)
-  +  loadLists(File file)
-  +  saveList(File file, List list)
-  +  saveLists(File file, ArrayList<List>)
+  +  loadList(String list)
+  +  saveList(string list)
 
 
 
@@ -73,9 +68,9 @@ class List {
   +  getTitle()
   +  getTasks()
 
-  +  addTask(Task task)
-  +  editTask(Task task)
-  +  removeTask(Task task)
+  +  addTask(String task)
+  +  editTask(String task)
+  +  removeTask(String task)
   +  markCompleted(Boolean completed)
   +  displayCompletedTasks()
   +  displayIncompleteTasks()

@@ -16,7 +16,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.fxml.Initializable;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -77,8 +76,6 @@ public class ListProgramController {
     @FXML
     private Button loadOne;
 
-   //@Override
-    public void initialize(URL url, ResourceBundle rb){}
 
     @FXML
     private void updateTasks() {

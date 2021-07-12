@@ -62,16 +62,12 @@ public class Lists {
 
 
     public String saveList(String list){
-        //Run through all the lists in the list of lists.
+       //loop through all lists and find the correct name
         for(int i = 0; i < ProgramLists.size(); i++) {
-            //Find the list that has been passed by name.
             if (ProgramLists.get(i).toString().equals(list)) {
                 try {
-                    //Create a writer and file.
                     BufferedWriter bw = new BufferedWriter(new FileWriter(System.getProperty("user.home")+"\\Desktop\\" + ProgramLists.get(i).toString() + ".txt"));
-                    //Write the name of the list in the first line.
                     bw.write(ProgramLists.get(i).toString() + "\n");
-                    //Write the tasks of that list in the other lines.
                     for(int j = 0; j < ProgramLists.get(i).Tasks.size(); j++)
                         bw.write(ProgramLists.get(i).Tasks.get(j).toString() + "\n");
                     bw.close();

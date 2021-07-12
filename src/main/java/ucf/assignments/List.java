@@ -14,6 +14,9 @@ public class List {
     //creates lists to display in the textareas
     String listTitle;
     ArrayList<Task> Tasks;
+    ArrayList<Task> IncompleteTasks;
+    ArrayList<Task> CompletedTasks;
+
 
     public List(String title) {
         this.listTitle = title;
@@ -77,24 +80,21 @@ public class List {
     }
     public ArrayList<Task> displayCompletedTasks(){
         //sets the completedtasks arraylist to the tasks that have a true isCompleted boolean
-        ArrayList<Task> completedTasks = new ArrayList<Task>();
 
         for(int i = 0; i < Tasks.size(); i++)
             if(Tasks.get(i).getIsCompleted() == true)
-                completedTasks.add(Tasks.get(i));
+                CompletedTasks.add(Tasks.get(i));
 
-        return completedTasks;
+        return CompletedTasks;
     }
     public ArrayList<Task> displayIncompleteTasks(){
         //sets the incompletetasks arraylist to the tasks that have a false isCompleted boolean
-        //Create an ArrayList for the incomplete tasks
-        ArrayList<Task> incompleteTasks = new ArrayList<Task>();
 
         for(int i = 0; i < Tasks.size(); i++)
             if(Tasks.get(i).getIsCompleted() == false)
-                incompleteTasks.add(Tasks.get(i));
+                IncompleteTasks.add(Tasks.get(i));
 
-        return incompleteTasks;
+        return IncompleteTasks;
     }
 
     public ArrayList<Task> displayAllTasks(){
