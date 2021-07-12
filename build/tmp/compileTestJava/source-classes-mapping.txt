@@ -1,0 +1,4 @@
+ucf/assignments/ListTest.java
+ ucf.assignments.ListTest
+ucf/assignments/ListsTest.java
+ ucf.assignments.ListsTest
